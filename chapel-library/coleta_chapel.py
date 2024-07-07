@@ -48,7 +48,7 @@ def extrair_informacoes(json_data):
 
 def main():
     base_url = 'https://www.chapellibrary.org/api/books'
-    page_count = 3
+    page_count = 121
     
     for page in range(1, page_count + 1):
         url = f'{base_url}?pageSize=10&pageCount={page}&language=EN&sortby=title'

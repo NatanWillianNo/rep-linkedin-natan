@@ -90,7 +90,7 @@ def main():
                             # Corrigindo o título para remover caracteres estranhos
                             titulo_corrigido = dado['titulo'].encode('ascii', 'ignore').decode()
                             print(f"  - Título: {titulo_corrigido}")
-                            print(f"    Link: {dado['link']}")
+                            print(f"Link: {dado['link']}")
                         pagina += 1
                     else:
                         print("-" * 30)
@@ -101,9 +101,8 @@ def main():
 
         # Itera pelas URLs adicionais
         urls_adicionais = [
-            "https://monergismo.net.br/?secao=livros",
-            "https://monergismo.net.br/?secao=meditacoes",
-            "https://monergismo.net.br/?secao=credos"
+            "https://monergismo.net.br/?secao=credos",
+            "https://monergismo.net.br/links.htm"
         ]
         for url in urls_adicionais:
             print(f"URL Completa: {url}")

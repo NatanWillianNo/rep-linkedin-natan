@@ -1,14 +1,24 @@
-import httpx
-from bs4 import BeautifulSoup
+import httpx  # Para fazer requisições web
+from bs4 import BeautifulSoup  # Para extrair dados de HTML
 
 def acessar_pagina(url):
+    """
+    Acessa a página da URL fornecida e retorna o conteúdo em formato JSON.
+
+    Args:
+        url (str): A URL da página a ser acessada.
+
+    Returns:
+        dict/None: Um dicionário contendo o conteúdo da página em formato JSON 
+                   ou None se a página não puder ser acessada.
+    """
     max_tentativas = 5
     tentativa = 1
     while tentativa <= max_tentativas:
         try:
             resposta = httpx.get(url, timeout=30)
             if resposta.status_code == 200:
-                return resposta.json()  # Retorna os dados JSON da resposta
+                return resposta.json()
             else:
                 print(f"Erro ao acessar {url}: {resposta.status_code}. Tentativa {tentativa}/{max_tentativas}")
                 tentativa += 1
@@ -18,57 +28,80 @@ def acessar_pagina(url):
     print(f"Excedido o número máximo de tentativas para {url}.")
     return None
 
-def extrair_informacoes(json_data):
-    dados = []
-    for item in json_data:
+def extrair_informacoes(dados_json):
+    """
+    Extrai informações relevantes dos dados JSON.
+
+    Args:
+        dados_json (dict): Um dicionário contendo dados em formato JSON.
+
+    Returns:
+        list: Uma lista de dicionários, cada um representando um livro 
+              com informações como título, autor, descrição, etc.
+    """
+    lista_livros = []
+    for item in dados_json:
         if item.get('language') == 'EN':
-            # Informações do livro principal em inglês
-            code = item.get('code')
-            title = item.get('title')
-            description = item.get('description', '')
-            pdf_url = f"https://www.chapellibrary.org/api/books/download?code={code}&format=pdf"
-            
-            # Remove tags HTML da descrição usando BeautifulSoup
-            soup = BeautifulSoup(description, 'html.parser')
-            description_cleaned = soup.get_text(separator='\n')
-            
-            # Verifica se há autores definidos
-            authors = item.get('authors', [])
-            author_name = authors[0]['name'] if authors else 'Autor Desconhecido'
-            
-            dados.append({
-                "code": code,
-                "title": title,
-                "author": author_name,
-                "description": description_cleaned.strip(),  # Remove espaços em branco extras
-                "pdf_url": pdf_url
-            })
-    
-    return dados  # Retorna a lista de informações extraídas
+            codigo = item.get('code')
+            titulo = item.get('title')
+            descricao = item.get('description', '')
+            url_pdf = f"https://www.chapellibrary.org/api/books/download?code={codigo}&format=pdf"
+            url_epub = f"https://www.chapellibrary.org/api/books/download?code={codigo}&format=epub"
+
+            # Remove tags HTML da descrição
+            soup = BeautifulSoup(descricao, 'html.parser')
+            descricao_limpa = soup.get_text(separator='\n')
+
+            autores = item.get('authors', [])
+            nome_autor = autores[0]['name'] if autores else 'Autor Desconhecido'
+            nome_arquivo = titulo + ' - ' + nome_autor
+
+            livro = {
+                "codigo": codigo,
+                "titulo": titulo,
+                "autor": nome_autor,
+                "descricao": descricao_limpa.strip(),
+                "url_pdf": url_pdf,
+                "nome_arquivo": nome_arquivo
+            }
+
+            # Tenta acessar o EPUB (sem imprimir verificação)
+            try:
+                with httpx.stream("GET", url_epub, timeout=10) as resposta_epub:
+                    if resposta_epub.status_code == 200:
+                        livro["url_epub"] = url_epub
+            except Exception as e:
+                pass  # Ignora erros ao acessar o EPUB
+
+            lista_livros.append(livro)
+
+    return lista_livros
 
 def main():
-    base_url = 'https://www.chapellibrary.org/api/books'
-    page_count = 121
-    
-    for page in range(1, page_count + 1):
-        url = f'{base_url}?pageSize=10&pageCount={page}&language=EN&sortby=title'
-        
-        # Acessa a página e obtém os dados JSON
-        json_data = acessar_pagina(url)
-        
-        if json_data:
-            # Extrai as informações relevantes do JSON
-            informacoes = extrair_informacoes(json_data)
-            
-            # Imprime as informações formatadas
-            for item in informacoes:
+    """
+    Função principal que orquestra o processo de raspagem de dados.
+    """
+    url_base = 'https://www.chapellibrary.org/api/books'
+    total_paginas = 121 
+
+    for pagina in range(1, total_paginas + 1):
+        url = f'{url_base}?pageSize=10&pageCount={pagina}&language=EN&sortby=title'
+        dados_json = acessar_pagina(url)
+
+        if dados_json:
+            informacoes_livros = extrair_informacoes(dados_json)
+
+            for livro in informacoes_livros:
                 print("-" * 50)
-                print(f"Código: {item['code']}")
-                print(f"Título: {item['title']}")
-                print(f"Autor: {item['author']}")
-                print(f"Descrição: {item['description']}")
-                print(f"Link PDF: {item['pdf_url']}")
-                print()  # Adiciona uma linha em branco entre cada livro
+                print(f"Código: {livro['codigo']}")
+                print(f"Título: {livro['titulo']}")
+                print(f"Autor: {livro['autor']}")
+                print(f"Descrição: {livro['descricao']}")
+                print(f"Link PDF: {livro['url_pdf']}")
+                if "url_epub" in livro:
+                    print(f"Link EPUB: {livro['url_epub']}")
+                print(f"Nome do arquivo: {livro['nome_arquivo']}")
+                print()
 
 if __name__ == '__main__':
     main()

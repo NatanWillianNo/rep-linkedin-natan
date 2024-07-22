@@ -7834,7 +7834,6 @@ Link PDF: https://www.chapellibrary.org/api/books/download?code=utti&format=pdf
 Link EPUB: https://www.chapellibrary.org/api/books/download?code=utti&format=epub
 Nome do arquivo: Understanding the Times - Ken Ham
 
-Erro de requisição em https://www.chapellibrary.org/api/books?pageSize=10&pageCount=77&language=EN&sortby=title: timed out. Tentativa 1/5
 --------------------------------------------------
 Código: uwchfg
 Título: Union with Christ

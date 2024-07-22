@@ -1,0 +1,15 @@
+name: linkedin_repositorio
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - pygame
+  - sympy
+  - tinydb
+  - python-dotenv
+  - requests
+  - beautifulsoup4
+  - unidecode
+  - httpx
+  - regex

@@ -52,7 +52,7 @@ Contribuições são bem-vindas! Se você quiser adicionar novos recursos, resol
 
 ## Autor
 
-Feito por Natan Willian de Souza Noronha (https://github.com/NatanWillianNo).
+Feito por [Natan Willian de Souza Noronha](https://github.com/NatanWillianNo)
 
 ---
 

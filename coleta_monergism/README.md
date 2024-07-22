@@ -35,5 +35,5 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues relatando
 
 ## Autores
 
-- [Natan Willian de Souza Noronha](https://github.com/NatanWillianNo)
+- Feito por [Natan Willian de Souza Noronha](https://github.com/NatanWillianNo)
 

@@ -1,6 +1,6 @@
 ## Coleta de Dados Automática do Site Monergismo
 
-Este script em Python, chamado `coleta_monergismo_auto.py`, utiliza as bibliotecas `httpx` e `BeautifulSoup` para extrair automaticamente informações do site monergismo.net.br. Ele coleta links, títulos e outros dados do menu lateral, seções, páginas de artigos, livros, meditações e credos.
+Este script em Python, chamado `coleta_monergismo.py`, utiliza as bibliotecas `httpx` e `BeautifulSoup` para extrair automaticamente informações do site monergismo.net.br. Ele coleta links, títulos e outros dados do menu lateral, seções, páginas de artigos, livros, meditações e credos.
 
 ### Funcionalidades:
 
@@ -19,7 +19,7 @@ Este script em Python, chamado `coleta_monergismo_auto.py`, utiliza as bibliotec
 2. **Executar o script:**
     - Execute o script no terminal:
       ```
-      python coleta_monergismo_auto.py
+      python coleta_monergismo.py
       ```
 
 3. **Visualizar os dados:** Os dados coletados do site serão impressos no console.

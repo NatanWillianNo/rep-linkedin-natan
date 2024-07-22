@@ -47,6 +47,7 @@ def extrair_informacoes(dados_json):
             descricao = item.get('description', '')
             url_pdf = f"https://www.chapellibrary.org/api/books/download?code={codigo}&format=pdf"
             url_epub = f"https://www.chapellibrary.org/api/books/download?code={codigo}&format=epub"
+            tem_versao_imprimivel = item.get('hasPrintableVersion', False)  # Obtém o valor de 'hasPrintableVersion'
 
             # Remove tags HTML da descrição
             soup = BeautifulSoup(descricao, 'html.parser')
@@ -62,7 +63,8 @@ def extrair_informacoes(dados_json):
                 "autor": nome_autor,
                 "descricao": descricao_limpa.strip(),
                 "url_pdf": url_pdf,
-                "nome_arquivo": nome_arquivo
+                "nome_arquivo": nome_arquivo,
+                "tem_versao_imprimivel": tem_versao_imprimivel  # Adiciona a informação ao dicionário do livro
             }
 
             # Tenta acessar o EPUB (sem imprimir verificação)
@@ -82,7 +84,7 @@ def main():
     Função principal que orquestra o processo de raspagem de dados.
     """
     url_base = 'https://www.chapellibrary.org/api/books'
-    total_paginas = 121 
+    total_paginas = 121
 
     for pagina in range(1, total_paginas + 1):
         url = f'{url_base}?pageSize=10&pageCount={pagina}&language=EN&sortby=title'
@@ -101,6 +103,7 @@ def main():
                 if "url_epub" in livro:
                     print(f"Link EPUB: {livro['url_epub']}")
                 print(f"Nome do arquivo: {livro['nome_arquivo']}")
+                print(f"Tem Versão Imprimível: {'SIM' if livro['tem_versao_imprimivel'] else 'NÃO'}")  # Mudança aqui
                 print()
 
 if __name__ == '__main__':

@@ -13,3 +13,4 @@ dependencies:
   - unidecode
   - httpx
   - regex
+  - selenium

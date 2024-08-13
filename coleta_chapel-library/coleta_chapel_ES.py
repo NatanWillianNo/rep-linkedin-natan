@@ -86,7 +86,7 @@ def main():
     url_base = 'https://www.chapellibrary.org/api/books'
     total_paginas = 121
 
-    for pagina in range(1, total_paginas + 1):
+    for pagina in range(0, total_paginas + 1):
         url = f'{url_base}?pageSize=10&pageCount={pagina}&language=ES&sortby=title'
         dados_json = acessar_pagina(url)
 

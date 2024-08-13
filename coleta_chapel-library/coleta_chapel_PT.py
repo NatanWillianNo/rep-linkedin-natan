@@ -41,7 +41,7 @@ def extrair_informacoes(dados_json):
     """
     lista_livros = []
     for item in dados_json:
-        if item.get('language') == 'EN':
+        if item.get('language') == 'PT':
             codigo = item.get('code')
             titulo = item.get('title')
             descricao = item.get('description', '')
@@ -87,7 +87,7 @@ def main():
     total_paginas = 121
 
     for pagina in range(0, total_paginas + 1):
-        url = f'{url_base}?pageSize=10&pageCount={pagina}&language=EN&sortby=title'
+        url = f'{url_base}?pageSize=10&pageCount={pagina}&language=PT&sortby=title'
         dados_json = acessar_pagina(url)
 
         if dados_json:

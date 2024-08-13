@@ -1,4 +1,111 @@
 --------------------------------------------------
+Código: bserf
+Título: A Baptismal Sermon
+Autor: Arthur W. Pink
+Descrição: In this rare sermon from 1927 taken down by shorthand in Australia, Pink presents us with a fine glimpse of our union with Christ, the meaning of Christian baptism, and the glory of the gospel.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=bserf&format=pdf
+Nome do arquivo: A Baptismal Sermon - Arthur W. Pink
+Tem Versão Imprimível: NÃO
+
+--------------------------------------------------
+Código: hlovfg
+Título: A Husband's Love
+Autor: Autor Desconhecido
+Descrição: With love for Christ and a burning desire to help men understand their God-ordained roles as husbands, we offer this issue of the Free Grace Broadcaster, 
+A Husband’s Love. 
+Matthew Henry sets the stage for the rest of the articles with his comments on Genesis 2—man’s responsibility to love his wife began in the Garden of Eden. David Martyn Lloyd-Jones then describes a Christlike love for us, since the Lord Jesus is the model from which husbands must learn how to love. What are the responsibilities of such a love? Ezekiel Hopkins gives us an overview. John Angell James then gives us a detailed survey of how Christ loved His church. In a second article, Lloyd-Jones carefully and biblically explains how men may love their wives as they love themselves. In a profound and deeply challenging article, Benjamin Palmer gives us insight into the force of love, the abuse of authority, and the affect these have on a woman’s heart. This article may be a difficult read for some, but it is worth repeated and prayerful reading. Men know well how to love themselves, and John Angell James appeals to them to apply the same to their wives. And who better than Charles Spurgeon can take the golden example of Christ loving His church and bringing it home to a husband’s heart? He does so with great power, clarity, and verve. Finally, with a heart full of Puritan fire, George Swinnock offers up a husband’s prayer for the grace to love as Christ and for the spiritual wellbeing of his dear wife. These articles will richly repay those who prayerfully apply them.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=hlovfg&format=pdf
+Link EPUB: https://www.chapellibrary.org/api/books/download?code=hlovfg&format=epub
+Nome do arquivo: A Husband's Love - Autor Desconhecido
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
+Código: aops
+Título: ABCs of Prophetic Scripture
+Autor: George H. Clement
+Descrição: The ABCs of the Prophetic Scriptures 
+compares the teachings of  dispensationalism with Scripture. It demonstrates that God has one glorious kingdom, prefigured in Israel, unveiled in the Church, and fulfilled in the eternal age to come. It argues that the Church of Jesus Christ is God’s spiritual Israel; that Christ’s Second Coming will be one event, marking the end of the world; and that the Tribulation, the Millennium, and the Antichrist are all representative of events that have begun to be fulfilled already in the experience of the Church, but may have yet to reach their climax before the return of Christ.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=aops&format=pdf
+Link EPUB: https://www.chapellibrary.org/api/books/download?code=aops&format=epub
+Nome do arquivo: ABCs of Prophetic Scripture - George H. Clement
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
+Código: aborfg
+Título: Abortion 
+Autor: Autor Desconhecido
+Descrição: Ten insightful articles on one of the most controversial subjects of our day.  Inform yourself about the reality of abortion and God’s abundant grace that covers such great sin.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=aborfg&format=pdf
+Link EPUB: https://www.chapellibrary.org/api/books/download?code=aborfg&format=epub
+Nome do arquivo: Abortion  - Autor Desconhecido
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
+Código: buasac
+Título: Acceptable Sacrifice, The
+Autor: John Bunyan
+Descrição: Miscellaneous
+Link PDF: https://www.chapellibrary.org/api/books/download?code=buasac&format=pdf
+Nome do arquivo: Acceptable Sacrifice, The - John Bunyan
+Tem Versão Imprimível: NÃO
+
+--------------------------------------------------
+Código: ajat
+Título: Adoniram Judson and the Missionary Call
+Autor: Erroll Hulse
+Descrição: Adoniram Judson (1788-1850) was the first missionary to sail abroad from America in the great mission awakening that developed in the early 19
+th
+ century. Three principal purposes are designed in this presentation of Judson’s life and doctrine. First, there is inspiration for every reader, as Judson exemplifies Christian faith, love, self-discipline, enterprise, perseverance, and godliness. Second, Adoniram Judson set an example of total commitment to inspire missionaries in enduring the inevitable strains peculiar to their calling. Third, there is the reality of the unfinished task of reaching the yet unreached people groups of the world. May Judson’s example contribute to thrusting out many new labourers into the harvest fields.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=ajat&format=pdf
+Link EPUB: https://www.chapellibrary.org/api/books/download?code=ajat&format=epub
+Nome do arquivo: Adoniram Judson and the Missionary Call - Erroll Hulse
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
+Código: adop
+Título: Adoption
+Autor: Lee Roy Shelton, Jr.
+Descrição: Adoption is one of the blessings that God has given us in Christ Jesus. "It is taking a stranger into the relationship of a son and heir." In adoption, God does the following three things: (1) He gives us His name; (2) He sanctifies us by His Spirit; and (3) the Holy Spirit prompts us to cry, "Abba, Father" (Gal 4:6). Adoption is a high honor and is a wonderful demonstration of the love of God to us.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=adop&format=pdf
+Nome do arquivo: Adoption - Lee Roy Shelton, Jr.
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
+Código: afse
+Título: Advice for Seekers
+Autor: Charles H. Spurgeon
+Descrição: Encouragements and exhortations for those seeking rest in the Lord Jesus by faith.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=afse&format=pdf
+Link EPUB: https://www.chapellibrary.org/api/books/download?code=afse&format=epub
+Nome do arquivo: Advice for Seekers - Charles H. Spurgeon
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
+Código: atco
+Título: Ages to Come, The
+Autor: Horatius Bonar
+Descrição: "The ages to come!" Are you ready for the ages to come? Death comes suddenly. Only faith in the living Christ prepares the soul for ages to come.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=atco&format=pdf
+Nome do arquivo: Ages to Come, The - Horatius Bonar
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
+Código: aode
+Título: Alive or Dead?
+Autor: John C. Ryle
+Descrição: J.C. Ryle’s 
+Alive or Dead
+ asks the question faced by every human who has ever lived: Are you among the living or the dead? In his direct and engaging style, Ryle challenges the reader to consider his own condition, and call upon God to turn him in the right direction before he “lays down this booklet.” Sections include
+1. All are spiritually dead 
+2. All need to be made alive
+3. How a dead soul is made alive
+4. Are you alive?
+Link PDF: https://www.chapellibrary.org/api/books/download?code=aode&format=pdf
+Link EPUB: https://www.chapellibrary.org/api/books/download?code=aode&format=epub
+Nome do arquivo: Alive or Dead? - John C. Ryle
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
 Código: actc
 Título: All Comers to Christ Welcome
 Autor: Charles H. Spurgeon

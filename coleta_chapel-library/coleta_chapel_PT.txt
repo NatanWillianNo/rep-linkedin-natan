@@ -1,0 +1,27 @@
+--------------------------------------------------
+Código: dogipt
+Título: As Doutrinas da Graça No Evangelho de João
+Autor: R. Bruce Steward
+Descrição: .
+Link PDF: https://www.chapellibrary.org/api/books/download?code=dogipt&format=pdf
+Nome do arquivo: As Doutrinas da Graça No Evangelho de João - R. Bruce Steward
+Tem Versão Imprimível: NÃO
+
+--------------------------------------------------
+Código: doelp
+Título: A doutrina da eleição
+Autor: Arthur W. Pink
+Descrição: Como a doutrina da eleição é uma parte do alto tema da soberania de Deus, uma breve palavra sobre ela primeiro. Em Apocalipse 19:6 nos é dito, “o Senhor Deus onipotente reina”. No céu e na terra, Ele é o controlador e ordenador de todas as criaturas. Como o Altíssimo, Ele governa entre os exércitos dos céus e ninguém pode deter a mão ou dizer-lhe: “Que fazes?” (Jó 9:12). Ele é o todo-poderoso, que faz todas as coisas segundo o con-selho da Sua própria vontade. Ele é o Oleiro celestial, que toma conta de nossa huma-nidade caída como um pedaço de barro, e para fora dela forja um como vaso para honra e outro vaso para desonra. Em suma, Ele é o decisivo e determinante do destino de cada homem e o controlador de cada detalhe na vida de cada indivíduo, o que é apenas outra maneira de dizer que Deus é Deus.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=doelp&format=pdf
+Nome do arquivo: A doutrina da eleição - Arthur W. Pink
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
+Código: beadp
+Título: Anciãos e Diáconos Bíblicos
+Autor: Nehemiah Coxe
+Descrição: A edificação e a beleza da igreja está em muito relacionada à sua ordem, não uma ordem do tipo que a superstição ditará, ou a controvérsia se esforçará por contender, mas tal como já descrita, que a estabelece em uma conformidade com a vontade de Cristo; e particular-mente o preenchimento dos ofícios que Ele nomeou com pessoas devidamente qualificadas para a administração deles, e a regular atuação tanto de oficiais quanto de membros, em suas respectivas posições.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=beadp&format=pdf
+Nome do arquivo: Anciãos e Diáconos Bíblicos - Nehemiah Coxe
+Tem Versão Imprimível: SIM
+

@@ -1,0 +1,9 @@
+--------------------------------------------------
+Código: ftttit
+Título: Dalla Tradizione alla Verita'
+Autor: Richard Bennett
+Descrição: .
+Link PDF: https://www.chapellibrary.org/api/books/download?code=ftttit&format=pdf
+Nome do arquivo: Dalla Tradizione alla Verita' - Richard Bennett
+Tem Versão Imprimível: NÃO
+

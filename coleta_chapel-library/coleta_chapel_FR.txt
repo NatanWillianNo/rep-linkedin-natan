@@ -1,4 +1,100 @@
 --------------------------------------------------
+Código: dogif
+Título: Les doctrines de la grâce dans l'évangile de Jean
+Autor: R. Bruce Steward
+Descrição: Étudiez l’Évangile de Jean avec cette excellente ressource. R. Bruce Steward examine les enseignements bibliques de la dépravation totale, la grâce de Dieu dans le salut et la persévérance des saints dans les quatre Évangiles. Un excellent outil pour l’étude biblique individuelle ou de groupe.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=dogif&format=pdf
+Link EPUB: https://www.chapellibrary.org/api/books/download?code=dogif&format=epub
+Nome do arquivo: Les doctrines de la grâce dans l'évangile de Jean - R. Bruce Steward
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
+Código: aybaf
+Título: Es-tu né de nouveau?
+Autor: J. C. Ryle
+Descrição: S'appuyant sur la 1ère épître de Jean, J.C. Ryle nous donne les six caractéristiques essentielles d’un chrétien né de nouveau en posant cette question : « possèdes-tu ces caractéristiques ? Es-tu né de nouveau ? »
+Link PDF: https://www.chapellibrary.org/api/books/download?code=aybaf&format=pdf
+Nome do arquivo: Es-tu né de nouveau? - J. C. Ryle
+Tem Versão Imprimível: NÃO
+
+--------------------------------------------------
+Código: cialf
+Título: Tout est en Christ
+Autor: J. C. Ryle
+Descrição: “Tout est en Christ” glorifie Jésus-Christ. Il présente le Sauveur ressuscité comme le Rédempteur agissant au travers de toute l’Histoire, ce Rédempteur qui n’a ni commencement ni fin. Ce traité est un grand encouragement autant pour l’âme en recherche que pour le saint expérimenté.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=cialf&format=pdf
+Link EPUB: https://www.chapellibrary.org/api/books/download?code=cialf&format=epub
+Nome do arquivo: Tout est en Christ - J. C. Ryle
+Tem Versão Imprimível: NÃO
+
+--------------------------------------------------
+Código: pdevf
+Título: L'évangélisation d'aujourd'hui
+Autor: Arthur W. Pink
+Descrição: Ce livret d’Arthur Pink jette un œil critique sur les méthodes d’évangélisation actuelle. Il nous appelle à une évangélisation vigoureuse fondée sur les saintes Écritures et centrée sur Dieu , et non pas à une approche centrée sur l’homme. Le véritable Évangile de Jésus-Christ est la nouvelle extraordinaire que le Fils de Dieu est le Sauveur souffrant qui délivre du péché et qu’il est le Seigneur exalté appelant les hommes à la repentance et à la foi en lui. Dans la Bible, le salut est plus qu’un ticket pour le ciel ; il nous délivre des conséquences du péché et, ce qui est encore plus important, du péché lui-même !
+Link PDF: https://www.chapellibrary.org/api/books/download?code=pdevf&format=pdf
+Link EPUB: https://www.chapellibrary.org/api/books/download?code=pdevf&format=epub
+Nome do arquivo: L'évangélisation d'aujourd'hui - Arthur W. Pink
+Tem Versão Imprimível: NÃO
+
+--------------------------------------------------
+Código: tiatf
+Título: Dix reproches adressés à l'Église d'aujourd'hui
+Autor: Paul Washer
+Descrição: « Dix reproches adressés à l’Église actuelle » est un sermon prêché à la « Revival Conference » à Atlanta en 2008. « Paul Washer adresse aux chrétiens et aux églises d’Amérique du Nord un appel urgent : beaucoup ont cru un faux évangile et possèdent donc une fausse assurance du salut ! Il passe en revue une série de dix reproches adressés à l’église américaine moderne. Ceci est un message historique et urgent pour l’Église. Communiquez-le autour de vous et diffusez-le ! Nous avons besoin d’une réforme et d’un réveil selon les normes bibliques ! » !”—Greg Gordon (organisateur de la Revival Conference)
+Link PDF: https://www.chapellibrary.org/api/books/download?code=tiatf&format=pdf
+Link EPUB: https://www.chapellibrary.org/api/books/download?code=tiatf&format=epub
+Nome do arquivo: Dix reproches adressés à l'Église d'aujourd'hui - Paul Washer
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
+Código: aachf
+Título: Presque Chrétien
+Autor: Matthew Meade
+Descrição: Aujourd’hui, beaucoup de ceux qui font profession de foi chrétienne se demandent : « Dans quelle mesure puis-je ressembler à ce monde tout en restant chrétien ? Dans cet extrait tiré d’un de ses livres, Matthew Meade nous montre par des exemples bibliques comment on peut s’approcher de Christ sans pour autant être chrétien. Un incontournable pour tous ceux qui désirent réellement examiner leur foi.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=aachf&format=pdf
+Nome do arquivo: Presque Chrétien - Matthew Meade
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
+Código: cdftf
+Título: Christ est mort pour des impies
+Autor: Horatius Bonar
+Descrição: Un traité très apprécié sur le salut, disponible également en espagnol. Bonar nous explique clairement la signification de l’impiété, et la libre grâce ? de Dieu en Christ offerte à l’impie. Un excellent traité d’évangélisation.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=cdftf&format=pdf
+Nome do arquivo: Christ est mort pour des impies - Horatius Bonar
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
+Código: ctsef
+Título: Un appel à la séparation
+Autor: Arthur W. Pink
+Descrição: L’appel que Dieu nous adresse à ne pas former un attelage disparate avec les païens (2 Corinthiens 6.14) est appliqué ici à nos relations dans l’église, à nos adhésions à diverses associations, au mariage et au partenariat professionnel. La septuple promesse divine nous est ainsi apportée, directement reliée à ce commandement de nous séparer de ce monde. Une sainte séparation d’avec le monde démontrera que nous sommes effectivement fils et filles de Dieu.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=ctsef&format=pdf
+Nome do arquivo: Un appel à la séparation - Arthur W. Pink
+Tem Versão Imprimível: NÃO
+
+--------------------------------------------------
+Código: dotnf
+Título: La doctrine de la nouvelle naissance
+Autor: Arthur W. Pink
+Descrição: La doctrine de la nouvelle naissance apporte un éclairage biblique sur une des doctrines fondamentales et essentielles des Écritures, souvent incomprise dans le monde chrétien d’aujourd’hui. L’expression « Être né de nouveau » est si souvent utilisée à mauvais escient que beaucoup qui sont pourtant loin du royaume de Dieu se croient régénérés ! Dans un style clair et vigoureux, Pink aborde les erreurs les plus grossières sur le sujet, dévoilant les enseignements clairs des Écritures concernant la régénération.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=dotnf&format=pdf
+Link EPUB: https://www.chapellibrary.org/api/books/download?code=dotnf&format=epub
+Nome do arquivo: La doctrine de la nouvelle naissance - Arthur W. Pink
+Tem Versão Imprimível: SIM
+
+--------------------------------------------------
+Código: epunf
+Título: Le châtiment éternel
+Autor: Arthur W. Pink
+Descrição: Ce livret aborde un sujet absolument crucial qui mérite l’attention de tous, quelle que soit leur condition spirituelle. Le juste jugement de Dieu sur le méchant est terrible et éternel. Le châtiment éternel est réel, et il manifeste la sainteté et la justice de Dieu lorsque celui-ci traite le péché, ainsi que sa glorieuse miséricorde et sa grâce envers son peuple. Pink conclut cette exposition sur le jugement de Dieu en adressant au lecteur perdu un fervent avertissement de venir à Christ, pour être sauvé de la colère à venir et du châtiment éternel par la miséricorde et la grâce éternelles de Dieu.
+Link PDF: https://www.chapellibrary.org/api/books/download?code=epunf&format=pdf
+Link EPUB: https://www.chapellibrary.org/api/books/download?code=epunf&format=epub
+Nome do arquivo: Le châtiment éternel - Arthur W. Pink
+Tem Versão Imprimível: NÃO
+
+--------------------------------------------------
 Código: erftf
 Título: Une requête fervente pour le salut du Seigneur
 Autor: Joseph Charles Philpot

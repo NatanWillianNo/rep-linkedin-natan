@@ -7,13 +7,6 @@ import time
 def acessar_pagina(url):
     """
     Acessa a página da URL fornecida e retorna o conteúdo em formato JSON.
-
-    Args:
-        url (str): A URL da página a ser acessada.
-
-    Returns:
-        dict/None: Um dicionário contendo o conteúdo da página em formato JSON 
-                   ou None se a página não puder ser acessada.
     """
     max_tentativas = 5
     tentativa = 1
@@ -24,44 +17,36 @@ def acessar_pagina(url):
                 return resposta.json()
             else:
                 print(f"Erro ao acessar {url}: {resposta.status_code}. Tentativa {tentativa}/{max_tentativas}")
-                time.sleep(5)  # Aguarde 5 segundos antes de tentar novamente
+                time.sleep(5)
                 tentativa += 1
         except httpx.RequestError as e:
             print(f"Erro de requisição em {url}: {e}. Tentativa {tentativa}/{max_tentativas}")
-            time.sleep(5)  # Aguarde 5 segundos antes de tentar novamente
+            time.sleep(5)
             tentativa += 1
     print(f"Excedido o número máximo de tentativas para {url}.")
     return None
 
 def extrair_informacoes(dados_json):
     """
-    Extrai informações relevantes dos dados JSON.
-
-    Args:
-        dados_json (dict): Um dicionário contendo dados em formato JSON.
-
-    Returns:
-        list: Uma lista de dicionários, cada um representando um livro 
-              com informações como título, autor, descrição, etc.
+    Extrai informações relevantes dos dados JSON, incluindo o preço.
     """
     lista_livros = []
     for item in dados_json:
         codigo = item.get('code')
         titulo = item.get('title')
         descricao = item.get('description', '')
+        preco = item.get('price', 'Indisponível')  # Obtém o preço
         url_pdf = f"https://www.chapellibrary.org/api/books/download?code={codigo}&format=pdf"
         url_epub = f"https://www.chapellibrary.org/api/books/download?code={codigo}&format=epub"
-        url_livro = f"https://www.chapellibrary.org/book/{codigo}/"  # URL original do livro
+        url_livro = f"https://www.chapellibrary.org/book/{codigo}/"
         tem_versao_imprimivel = item.get('hasPrintableVersion', False)
 
-        # Remove tags HTML da descrição
         soup = BeautifulSoup(descricao, 'html.parser')
         descricao_limpa = soup.get_text(separator='\n')
 
         autores = item.get('authors', [])
         nome_autor = autores[0]['name'] if autores else 'Autor Desconhecido'
 
-        # Criar um nome de arquivo válido removendo caracteres inválidos
         nome_arquivo = f"{titulo} - {nome_autor}".replace("\\", "").replace("/", "").replace(":", "").replace("*", "").replace("?", "").replace("\"", "").replace("<", "").replace(">", "").replace("|", "")
 
         livro = {
@@ -69,9 +54,10 @@ def extrair_informacoes(dados_json):
             "titulo": titulo,
             "autor": nome_autor,
             "descricao": descricao_limpa.strip(),
+            "preco": preco,  # Adiciona o preço ao dicionário do livro
             "url_pdf": url_pdf,
             "url_epub": url_epub,
-            "url_livro": url_livro,  # Adicionado url_livro
+            "url_livro": url_livro,
             "nome_arquivo": nome_arquivo,
             "tem_versao_imprimivel": tem_versao_imprimivel
         }
@@ -80,19 +66,9 @@ def extrair_informacoes(dados_json):
 
     return lista_livros
 
-def coletar_arquivos(link_pdf, link_epub, nome_arquivo, idioma, link_livro): # Adicionado link_livro
+def coletar_arquivos(link_pdf, link_epub, nome_arquivo, idioma, link_livro):
     """
     Cria as pastas para salvar PDFs e EPUBs e baixa os arquivos dos links fornecidos.
-
-    Args:
-        link_pdf (str): URL do PDF a ser baixado.
-        link_epub (str): URL do EPUB a ser baixado.
-        nome_arquivo (str): Nome do arquivo a ser salvo (sem extensão).
-        idioma (str): Idioma do conteúdo.
-        link_livro (str): URL original do livro na Chapel Library.
-
-    Returns:
-        tuple: Caminhos completos dos arquivos PDF e EPUB salvos localmente, ou None se não foram baixados.
     """
     load_dotenv()
     DIR_BD = os.getenv("DIR_BD")
@@ -113,7 +89,7 @@ def coletar_arquivos(link_pdf, link_epub, nome_arquivo, idioma, link_livro): # A
     local_epub = os.path.join(caminho_epub, f"{nome_arquivo}.epub")
 
     try:
-        baixou_algo = False  # Sinalizador para verificar se algum arquivo foi baixado
+        baixou_algo = False
 
         if link_pdf:
             resposta_pdf = httpx.get(link_pdf, timeout=60)
@@ -145,7 +121,6 @@ def coletar_arquivos(link_pdf, link_epub, nome_arquivo, idioma, link_livro): # A
         else:
             local_epub = None
 
-        # Se nenhum arquivo foi baixado, imprime a URL original do livro
         if not baixou_algo:
             print(f"Nenhum arquivo PDF/EPUB encontrado. Link para o livro: {link_livro}")
 
@@ -161,12 +136,6 @@ def coletar_arquivos(link_pdf, link_epub, nome_arquivo, idioma, link_livro): # A
 def verificar_link(url):
     """
     Verifica se o link fornecido é acessível.
-
-    Args:
-        url (str): URL a ser verificada.
-
-    Returns:
-        bool: True se o link for acessível (status_code 200), False caso contrário.
     """
     try:
         resposta = httpx.get(url, timeout=10)
@@ -195,6 +164,7 @@ def main():
                     print(f"Código: {livro['codigo']}")
                     print(f"Título: {livro['titulo']}")
                     print(f"Autor: {livro['autor']}")
+                    print(f"Preço: {livro['preco']}")  # Imprime o preço do livro
                     # print(f"Descrição: {livro['descricao']}")
                     if livro['url_pdf']:
                         print(f"Link PDF: {livro['url_pdf']}")
@@ -206,7 +176,7 @@ def main():
                     print(f"Tem Versão Imprimível: {'SIM' if livro['tem_versao_imprimivel'] else 'NÃO'}")
 
                     local_pdf, local_epub = coletar_arquivos(livro['url_pdf'], livro.get('url_epub'), 
-                                                        livro['nome_arquivo'], idioma, livro['url_livro']) # Passando link_livro para coletar_arquivos
+                                                        livro['nome_arquivo'], idioma, livro['url_livro'])
 
                     if local_pdf or local_epub:
                         print(f"Arquivos baixados com sucesso!")

@@ -9796,7 +9796,7 @@ Autor: Seth Payson
 Preço: 0.43
 Link PDF: https://www.chapellibrary.org/api/books/download?code=sotn&format=pdf
 Nome do arquivo: Sermon on the Nature of Love to God, A - Seth Payson
-Tem Versão Imprimível: SIM
+Tem Versão Imprimível: NÃO
 ------------------------------
 Arquivo .pdf: 'Sermon on the Nature of Love to God, A - Seth Payson' baixado com sucesso em '/home/labri_natannoronha/codigo/rep-linkedin-natan/coletas_baixadas/coleta_chapel_EN/pdf/Sermon on the Nature of Love to God, A - Seth Payson.pdf'
 ------------------------------
@@ -10513,10 +10513,9 @@ Tem Versão Imprimível: NÃO
 ------------------------------
 Arquivo .pdf: 'Studies in the Scriptures Annual Vol., 1949 - Arthur W. Pink' baixado com sucesso em '/home/labri_natannoronha/codigo/rep-linkedin-natan/coletas_baixadas/coleta_chapel_EN/pdf/Studies in the Scriptures Annual Vol., 1949 - Arthur W. Pink.pdf'
 ------------------------------
-------------------------------
-Arquivo .epub: 'Studies in the Scriptures Annual Vol., 1949 - Arthur W. Pink' baixado com sucesso para '/home/labri_natannoronha/codigo/rep-linkedin-natan/coletas_baixadas/coleta_chapel_EN/epub/Studies in the Scriptures Annual Vol., 1949 - Arthur W. Pink.epub'
-------------------------------
-Arquivos baixados com sucesso!
+Erro HTTP ao baixar 'Studies in the Scriptures Annual Vol., 1949 - Arthur W. Pink': timed out
+Nenhum arquivo foi baixado.
+
 --------------------------------------------------
 Código: si50
 Título: Studies in the Scriptures Annual Vol., 1950
@@ -17543,6 +17542,45 @@ Arquivo .epub: 'The Christian's Love for Christ - Autor Desconhecido' baixado co
 ------------------------------
 Arquivos baixados com sucesso!
 --------------------------------------------------
+Código: pits
+Título: Pathway into the Scriptures
+Autor: William Tyndale
+Preço: 1.1
+Link PDF: https://www.chapellibrary.org/api/books/download?code=pits&format=pdf
+Nome do arquivo: Pathway into the Scriptures - William Tyndale
+Tem Versão Imprimível: SIM
+------------------------------
+Arquivo .pdf: 'Pathway into the Scriptures - William Tyndale' baixado com sucesso em '/home/labri_natannoronha/codigo/rep-linkedin-natan/coletas_baixadas/coleta_chapel_EN/pdf/Pathway into the Scriptures - William Tyndale.pdf'
+------------------------------
+Erro ao baixar EPUB: 404
+Arquivos baixados com sucesso!
+--------------------------------------------------
+Código: mrin
+Título: The Marriage Ring: How to Make Home Happy
+Autor: John Angell James
+Preço: 2.05
+Link PDF: https://www.chapellibrary.org/api/books/download?code=mrin&format=pdf
+Nome do arquivo: The Marriage Ring How to Make Home Happy - John Angell James
+Tem Versão Imprimível: SIM
+------------------------------
+Arquivo .pdf: 'The Marriage Ring How to Make Home Happy - John Angell James' baixado com sucesso em '/home/labri_natannoronha/codigo/rep-linkedin-natan/coletas_baixadas/coleta_chapel_EN/pdf/The Marriage Ring How to Make Home Happy - John Angell James.pdf'
+------------------------------
+Erro ao baixar EPUB: 404
+Arquivos baixados com sucesso!
+--------------------------------------------------
+Código: daot
+Título: The Divine Authority of the Bible
+Autor: Benjamin Keach
+Preço: 1.37
+Link PDF: https://www.chapellibrary.org/api/books/download?code=daot&format=pdf
+Nome do arquivo: The Divine Authority of the Bible - Benjamin Keach
+Tem Versão Imprimível: SIM
+------------------------------
+Arquivo .pdf: 'The Divine Authority of the Bible - Benjamin Keach' baixado com sucesso em '/home/labri_natannoronha/codigo/rep-linkedin-natan/coletas_baixadas/coleta_chapel_EN/pdf/The Divine Authority of the Bible - Benjamin Keach.pdf'
+------------------------------
+Erro ao baixar EPUB: 404
+Arquivos baixados com sucesso!
+--------------------------------------------------
 Código: ytyas
 Título: ¡Crees que estás cumpliendo condena ahora!
 Autor: Billy Morrison
@@ -21358,9 +21396,22 @@ Preço: 1.92
 Link PDF: https://www.chapellibrary.org/api/books/download?code=uwchfgs&format=pdf
 Nome do arquivo: Unión con Cristo - Autor Desconhecido
 Tem Versão Imprimível: SIM
+------------------------------
+Arquivo .pdf: 'Unión con Cristo - Autor Desconhecido' baixado com sucesso em '/home/labri_natannoronha/codigo/rep-linkedin-natan/coletas_baixadas/coleta_chapel_ES/pdf/Unión con Cristo - Autor Desconhecido.pdf'
+------------------------------
+Erro ao baixar EPUB: 404
+Arquivos baixados com sucesso!
+--------------------------------------------------
+Código: nrcos
+Título: El catecismo de la nueva reforma sobre la sexualidad humana
+Autor: Christopher  Gordon
+Preço: 0.69
+Link PDF: https://www.chapellibrary.org/api/books/download?code=nrcos&format=pdf
+Nome do arquivo: El catecismo de la nueva reforma sobre la sexualidad humana - Christopher  Gordon
+Tem Versão Imprimível: SIM
 Erro ao baixar PDF: 404
 Erro ao baixar EPUB: 404
-Nenhum arquivo PDF/EPUB encontrado. Link para o livro: https://www.chapellibrary.org/book/uwchfgs/
+Nenhum arquivo PDF/EPUB encontrado. Link para o livro: https://www.chapellibrary.org/book/nrcos/
 Nenhum arquivo foi baixado.
 
 --------------------------------------------------

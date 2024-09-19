@@ -1,0 +1,13 @@
+[
+    {
+        "codigo": "ftttit",
+        "titulo": "Dalla Tradizione alla Verita'",
+        "autor": "Richard Bennett",
+        "descricao": ".",
+        "preco": "0.00",
+        "link_livro": "https://www.chapellibrary.org/book/ftttit/",
+        "link_pdf": "https://www.chapellibrary.org/api/books/download?code=ftttit&format=pdf",
+        "link_epub": "",
+        "tem_versao_imprimivel": "NÃO"
+    }
+]

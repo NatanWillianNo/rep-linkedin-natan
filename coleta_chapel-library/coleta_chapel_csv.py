@@ -5,6 +5,8 @@ import time
 import csv
 import json
 from dotenv import load_dotenv
+from tqdm import tqdm
+from colorama import Fore, Style
 
 # Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -12,6 +14,7 @@ DIR_BD = os.getenv("DIR_BD")
 
 if not DIR_BD:
     raise ValueError("A variável de ambiente DIR_BD não está definida.")
+
 
 def acessar_pagina(url):
     """
@@ -32,33 +35,48 @@ def acessar_pagina(url):
             if resposta.status_code == 200:
                 return resposta.json()
             else:
+                print(
+                    f"Erro ao acessar {url}: {resposta.status_code}. Tentativa {tentativa}/{max_tentativas}"
+                )
                 time.sleep(5)
                 tentativa += 1
         except httpx.RequestError as e:
+            print(
+                f"Erro de requisição em {url}: {e}. Tentativa {tentativa}/{max_tentativas}"
+            )
             time.sleep(5)
             tentativa += 1
+    print(f"Excedido o número máximo de tentativas para {url}.")
     return None
 
-def verificar_link(url):
+
+def verificar_link_download(url):
     """
-    Verifica se o link fornecido é acessível.
+    Verifica a validade de um link de download tentando baixar um pequeno pedaço
+    do arquivo.
 
     Args:
-        url (str): A URL a ser verificada.
+        url (str): A URL do arquivo para download.
 
     Returns:
-        bool: True se o link for acessível (código de status 200), False caso contrário.
+        bool: True se o download do pedaço do arquivo for bem-sucedido, False caso contrário.
     """
     try:
-        resposta = httpx.get(url, timeout=10)
-        return resposta.status_code == 200
-    except httpx.RequestError:
-        return False
+        with httpx.stream("GET", url, timeout=10) as resposta:
+            if resposta.status_code == 200:
+                # Lê um pequeno pedaço de dados da resposta
+                _ = resposta.read()  # Remove o argumento '1024' aqui
+                return True
+            
+    except Exception as e:
+        print(f"Aviso: Erro ao verificar link de download {url}: {e}")
+    return False
 
 def extrair_informacoes(dados_json):
     """
     Extrai informações relevantes dos dados JSON, incluindo o preço,
-    e verifica a disponibilidade dos links para download de PDF e EPUB.
+    e verifica a disponibilidade dos links para download de PDF e EPUB
+    tentando baixar um pedaço do arquivo.
 
     Args:
         dados_json (dict): Um dicionário contendo os dados JSON da página.
@@ -69,107 +87,136 @@ def extrair_informacoes(dados_json):
     """
     lista_livros = []
     for item in dados_json:
-        codigo = item.get('code')
-        titulo = item.get('title')
-        descricao = item.get('description', '')
-        preco = item.get('price', 'Indisponível')
+        codigo = item.get("code")
+        titulo = item.get("title")
+        descricao = item.get("description", "")
+        preco = item.get("price", "Indisponível")
         if isinstance(preco, float) or isinstance(preco, int):
-            preco = f'{preco:.2f}'
+            preco = f"{preco:.2f}"
         url_livro = f"https://www.chapellibrary.org/book/{codigo}/"
-        tem_versao_imprimivel = 'SIM' if item.get('hasPrintableVersion', False) else 'NÃO'
+        tem_versao_imprimivel = (
+            "SIM" if item.get("hasPrintableVersion", False) else "NÃO"
+        )
 
-        url_pdf = f"https://www.chapellibrary.org/api/books/download?code={codigo}&format=pdf"
-        if verificar_link(url_pdf):
-            link_pdf = url_pdf
-        else:
-            link_pdf = ""
+        url_pdf = (
+            f"https://www.chapellibrary.org/api/books/download?code={codigo}&format=pdf"
+        )
+        link_pdf = url_pdf if verificar_link_download(url_pdf) else ""
 
-        url_epub = f"https://www.chapellibrary.org/api/books/download?code={codigo}&format=epub"
-        if verificar_link(url_epub):
-            link_epub = url_epub
-        else:
-            link_epub = ""
+        url_epub = (
+            f"https://www.chapellibrary.org/api/books/download?code={codigo}&format=epub"
+        )
+        link_epub = url_epub if verificar_link_download(url_epub) else ""
 
-        soup = BeautifulSoup(descricao, 'html.parser')
-        descricao_limpa = soup.get_text(separator='\n')
+        soup = BeautifulSoup(descricao, "html.parser")
+        descricao_limpa = soup.get_text(separator="\n")
 
-        autores = item.get('authors', [])
-        nome_autor = autores[0]['name'] if autores else 'Autor Desconhecido'
+        autores = item.get("authors", [])
+        nome_autor = autores[0]["name"] if autores else "Autor Desconhecido"
 
         livro = {
-            "codigo": f"Código: {codigo}",
-            "titulo": f"Título: {titulo}",
-            "autor": f"Autor: {nome_autor}",
-            "descricao": f"Descrição: {descricao_limpa.strip()}",
-            "preco": f"Preço: {preco}",
-            "link_livro": f"Link do livro: {url_livro}",
-            "link_pdf": f"Link do PDF: {link_pdf}",
-            "link_epub": f"Link do EPUB: {link_epub}",
-            "tem_versao_imprimivel": f"Tem versão imprimível: {tem_versao_imprimivel}"
+            "codigo": codigo,
+            "titulo": titulo,
+            "autor": nome_autor,
+            "descricao": descricao_limpa.strip(),
+            "preco": preco,
+            "link_livro": url_livro,
+            "link_pdf": link_pdf,
+            "link_epub": link_epub,
+            "tem_versao_imprimivel": tem_versao_imprimivel,
         }
 
         lista_livros.append(livro)
 
     return lista_livros
 
-
-def salvar_csv(dados):
+def salvar_csv(dados, idioma):
     """
-    Salva todos os dados dos livros em um único arquivo CSV chamado 'livros_chapel.csv'.
+    Salva os dados dos livros em um arquivo CSV com o nome do idioma.
 
     Args:
         dados (list): Uma lista de dicionários, onde cada dicionário representa um livro.
+        idioma (str): O idioma dos livros a serem salvos.
     """
-    nome_arquivo = os.path.join(DIR_BD, 'livros_chapel.csv')
+    nome_arquivo = os.path.join(DIR_BD, f"livros_chapel_{idioma}.csv")
 
-    campos = ["codigo", "titulo", "autor", "descricao", "preco", "link_livro", "link_pdf",
-              "link_epub", "tem_versao_imprimivel"]
+    campos = [
+        "codigo",
+        "titulo",
+        "autor",
+        "descricao",
+        "preco",
+        "link_livro",
+        "link_pdf",
+        "link_epub",
+        "tem_versao_imprimivel",
+    ]
 
     # Se o arquivo não existir, cria um novo com cabeçalho
-    if not os.path.isfile(nome_arquivo): 
-        with open(nome_arquivo, 'w', newline='', encoding='utf-8') as arquivo_csv:
+    if not os.path.isfile(nome_arquivo):
+        with open(nome_arquivo, "w", newline="", encoding="utf-8") as arquivo_csv:
             escritor = csv.DictWriter(arquivo_csv, fieldnames=campos)
             escritor.writeheader()
 
     # Abre o arquivo em modo 'append' para adicionar dados
-    with open(nome_arquivo, 'a', newline='', encoding='utf-8') as arquivo_csv:
+    with open(nome_arquivo, "a", newline="", encoding="utf-8") as arquivo_csv:
         escritor = csv.DictWriter(arquivo_csv, fieldnames=campos)
         for livro in dados:
             escritor.writerow(livro)
 
-def salvar_json(dados):
+
+def salvar_json(dados, idioma):
     """
-    Salva todos os dados dos livros em um único arquivo JSON chamado 'livros_chapel.json'.
+    Salva os dados dos livros em um arquivo JSON com o nome do idioma.
+    Remove as chaves dentro dos livros no arquivo JSON.
 
     Args:
         dados (list): Uma lista de dicionários, onde cada dicionário representa um livro.
+        idioma (str): O idioma dos livros a serem salvos.
     """
-    nome_arquivo = os.path.join(DIR_BD, 'livros_chapel.json')
-    with open(nome_arquivo, 'w', encoding='utf-8') as arquivo_json:
-        json.dump(dados, arquivo_json, ensure_ascii=False, indent=4)
+    nome_arquivo = os.path.join(DIR_BD, f"livros_chapel_{idioma}.json")
+    with open(nome_arquivo, "w", encoding="utf-8") as arquivo_json:
+        # Utiliza json.dumps para formatar o JSON em uma string
+        json_str = json.dumps(dados, ensure_ascii=False, indent=4)
+
+        # Remove aspas extras ao redor dos valores que não são strings
+        json_str = json_str.replace('"true"', 'true').replace('"false"', 'false')
+
+        arquivo_json.write(json_str)
+
 
 def main():
     """
-    Função principal que orquestra o processo de raspagem de dados
-    e salvamento em um arquivo CSV.
+    Função principal.
     """
-    url_base = 'https://www.chapellibrary.org/api/books'
-    idiomas = ['PT', 'EN', 'ES', 'FR', 'IT']
-    total_paginas = 121
-    todos_os_livros = [] # Para armazenar todos os livros antes de salvar
+    url_base = "https://www.chapellibrary.org/api/books"
+    idiomas_paginas = {"EN": 122, "ES": 27, "FR": 4, "PT": 2,  "IT": 2}
 
-    for idioma in idiomas:
-        for pagina in range(0, total_paginas + 1):
-            url = f'{url_base}?pageSize=10&pageCount={pagina}&language={idioma}&sortby=title'
-            dados_json = acessar_pagina(url)
+    for idioma, total_paginas in idiomas_paginas.items():
+        todos_os_livros = []
+        print(Fore.BLUE + f"Processando idioma: {idioma}" + Style.RESET_ALL)
 
-            if dados_json:
-                informacoes_livros = extrair_informacoes(dados_json)
-                todos_os_livros.extend(informacoes_livros) 
+        with tqdm(
+            total=total_paginas,
+            desc=f"Progresso {idioma}",
+            bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_fmt}]",
+        ) as barra_progresso:
+            for pagina in range(0, total_paginas + 1):
+                url = f"{url_base}?pageSize=10&pageCount={pagina}&language={idioma}&sortby=title"
+                dados_json = acessar_pagina(url)
 
-    # Salva todos os livros em CSV e JSON após a raspagem completa
-    salvar_csv(todos_os_livros) 
-    salvar_json(todos_os_livros)
+                if dados_json:
+                    informacoes_livros = extrair_informacoes(dados_json)
+                    todos_os_livros.extend(informacoes_livros)
 
-if __name__ == '__main__':
+                barra_progresso.update(1)
+                time.sleep(
+                    1
+                )  # Pausa para não sobrecarregar o servidor
+
+        salvar_csv(todos_os_livros, idioma)
+        salvar_json(todos_os_livros, idioma)
+
+
+if __name__ == "__main__":
     main()

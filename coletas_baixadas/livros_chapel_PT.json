@@ -1,0 +1,35 @@
+[
+    {
+        "codigo": "dogipt",
+        "titulo": "As Doutrinas da Graça No Evangelho de João",
+        "autor": "R. Bruce Steward",
+        "descricao": ".",
+        "preco": "0.00",
+        "link_livro": "https://www.chapellibrary.org/book/dogipt/",
+        "link_pdf": "https://www.chapellibrary.org/api/books/download?code=dogipt&format=pdf",
+        "link_epub": "",
+        "tem_versao_imprimivel": "NÃO"
+    },
+    {
+        "codigo": "doelp",
+        "titulo": "A doutrina da eleição",
+        "autor": "Arthur W. Pink",
+        "descricao": "Como a doutrina da eleição é uma parte do alto tema da soberania de Deus, uma breve palavra sobre ela primeiro. Em Apocalipse 19:6 nos é dito, “o Senhor Deus onipotente reina”. No céu e na terra, Ele é o controlador e ordenador de todas as criaturas. Como o Altíssimo, Ele governa entre os exércitos dos céus e ninguém pode deter a mão ou dizer-lhe: “Que fazes?” (Jó 9:12). Ele é o todo-poderoso, que faz todas as coisas segundo o con-selho da Sua própria vontade. Ele é o Oleiro celestial, que toma conta de nossa huma-nidade caída como um pedaço de barro, e para fora dela forja um como vaso para honra e outro vaso para desonra. Em suma, Ele é o decisivo e determinante do destino de cada homem e o controlador de cada detalhe na vida de cada indivíduo, o que é apenas outra maneira de dizer que Deus é Deus.",
+        "preco": "0.69",
+        "link_livro": "https://www.chapellibrary.org/book/doelp/",
+        "link_pdf": "https://www.chapellibrary.org/api/books/download?code=doelp&format=pdf",
+        "link_epub": "",
+        "tem_versao_imprimivel": "SIM"
+    },
+    {
+        "codigo": "beadp",
+        "titulo": "Anciãos e Diáconos Bíblicos",
+        "autor": "Nehemiah Coxe",
+        "descricao": "A edificação e a beleza da igreja está em muito relacionada à sua ordem, não uma ordem do tipo que a superstição ditará, ou a controvérsia se esforçará por contender, mas tal como já descrita, que a estabelece em uma conformidade com a vontade de Cristo; e particular-mente o preenchimento dos ofícios que Ele nomeou com pessoas devidamente qualificadas para a administração deles, e a regular atuação tanto de oficiais quanto de membros, em suas respectivas posições.",
+        "preco": "1.37",
+        "link_livro": "https://www.chapellibrary.org/book/beadp/",
+        "link_pdf": "https://www.chapellibrary.org/api/books/download?code=beadp&format=pdf",
+        "link_epub": "",
+        "tem_versao_imprimivel": "SIM"
+    }
+]
